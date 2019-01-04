@@ -1,32 +1,19 @@
-// This code is for practicing JS DOM and Event
-
 const title = document.querySelector("#title");
 
-const BASE_COLOR = "rgb(52, 73, 94)";
-const OTHER_COLOR = "#7f8c8d";
+const CLICKED_CLASS = "clicked";
 
 function handleClick() {
-    const currentColor = title.style.color;
-    if(currentColor === BASE_COLOR){
-        title.style.color = OTHER_COLOR;
-    } else {
-        title.style.color = BASE_COLOR;
-    }
+    title.classList.toggle(CLICKED_CLASS);
+    // 다음 코드와 완전히 똑같은 역할을 한다
+    // const hasClass = title.classList.contains(CLICKED_CLASS);
+    // if(!hasClass){
+    //     title.classList.add(CLICKED_CLASS);
+    // } else {
+    //     title.classList.remove(CLICKED_CLASS);
+    // }
 }
 
 function init(){
-    title.style.color = "BASE_COLOR";
     title.addEventListener("click", handleClick);
 }
 init();
-
-function handleOffline(){
-    console.log("Bye bye");
-}
-
-function handleOnline(){
-    console.log("Welcome back");
-}
-
-window.addEventListener("offline", handleOffline);
-window.addEventListener("online", handleOnline);
