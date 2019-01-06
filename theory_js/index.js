@@ -15,5 +15,7 @@ function handleClick() {
 
 function init(){
     title.addEventListener("click", handleClick);
+    // parameter 함수를 handleClick으로 해야 함
+    // handleClick()이면 그 자리에서 즉시 호출
 }
 init();
